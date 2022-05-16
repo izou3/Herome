@@ -1,6 +1,0 @@
-[submodule "TestDrive"]
-	path = TestDrive
-	url = https://github.com/izou3/TestDrive.git
-[submodule "RaspPi"]
-	path = RaspPi
-	url = https://github.gatech.edu/izou3/RaspPi

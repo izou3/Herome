@@ -79,6 +79,7 @@ def Post_Processing(DetectedObjsQueue):
     MAX_RPM = (MAX_LIN_VEL + (HALF_WHEEL_BASE * MAX_ANG_VEL)) / (WHEEL_RADIUS_MUL_RPM_TO_RAD_PER_S)
     RPM_TO_PWM = 100 / 350 # 100 / 350
     
+    # Manually Tuned Parameters
     Kp = 0.24
     Kd = 0.5
     oldAngular = 0
@@ -115,7 +116,7 @@ def Post_Processing(DetectedObjsQueue):
         for obj in objs:
             if (obj.id == 0):
                 det_obj = obj
-                scale_x, scale_y = 640 / 320, 480 / 320
+                scale_x, scale_y = 640 / 320, 480 / 320 # for 640X480 images only based on MobileDet Moble Input Size
 
                 bbox = det_obj.bbox.scale(scale_x, scale_y)
                 
@@ -136,8 +137,6 @@ def Post_Processing(DetectedObjsQueue):
             for detect in track_bbs_ids:
                 if (detect[4] == lastID):
                     label = 'ID: {}'.format(detect[4])
-                    # cv2_im = cv2.rectangle(cv2_im, (int(detect[0]), int(detect[1])), (int(detect[2]), int(detect[3])), (255, 255, 255), 5)
-                    # cv2_im = cv2.putText(cv2_im, label, (int(detect[0]), int(detect[1] + 50)), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 2)
                     foundLastID = True
                     
                     Xp = int((detect[2] + detect[0]) / 2)
@@ -147,8 +146,7 @@ def Post_Processing(DetectedObjsQueue):
             if (not foundLastID):
                 lastID = detect[4]
                 label = 'ID: {}'.format(detect[4])
-                # cv2_im = cv2.rectangle(cv2_im, (int(detect[0]), int(detect[1])), (int(detect[2]), int(detect[3])), (255, 255, 255), 5)
-                # cv2_im = cv2.putText(cv2_im, label, (int(detect[0]), int(detect[1] + 50)), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 2)
+            
                 Xp = int((detect[2] + detect[0]) / 2)
                 w = abs(int(detect[2]) - int(detect[0]))
                 
@@ -280,7 +278,7 @@ def main():
     while cap.isOpened():
         start_ms = time.time()
         ret, frame = cap.read()
-        # print('reading frame')
+
         if not ret:
             break
         
@@ -292,16 +290,6 @@ def main():
         objects = get_objects(interpreter, args.threshold)[:args.top_k]
         
         DetectedObjectsQueue.put(objects)
-        # print('Main', (time.time() - start_ms)*1000.0)
-        
-        '''
-        cv2.imshow('frame', cv2_im)
-        key = cv2.waitKey(1)
-        if key == ord("q"):
-            cv2.destroyAllWindows()
-            break
-        '''
-        
         
     print("Destroying Main and Child Process...")
     postprocessing_process.terminate()

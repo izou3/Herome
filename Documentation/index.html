@@ -35,8 +35,8 @@
 <center><p> Figure 1. System diagram for the robot and its subsystems. </p></center>
 <center><img src="Diagrams and Schematics/ECE4180_SoftwareControlDiagram.png" alt="SCD" width="700"></center>
 <center><p> Figure 2. System control diagram for the robot and its software subsystems. </p></center>
-<center><img src="Robot Pictures/IMG-5168.jpg" alt="I5168" width="500"></center>
-<center><img src="Robot Pictures/IMG-5169.jpg" alt="I5169" width="300"><img src="Robot Pictures/IMG-5170.jpg" alt="I5170" width="300"></center>
+<center><img src="pictures/IMG-5168.jpg" alt="I5168" width="500"></center>
+<center><img src="pictures/IMG-5169.jpg" alt="I5169" width="300"><img src="pictures/IMG-5170.jpg" alt="I5170" width="300"></center>
 <center><p> Figure 3. Picture of the whole robot. </p></center>
 
 <h3>
@@ -101,7 +101,7 @@ To get up and running with Herome from scratch, the following task will need to 
 <p>A 4-wheel differential drive with 2 dual-hbridge breakout broads acting as motor drivers is the implementation of the motor control subsystem. In terms of software execution, it will input list of objects detected from the Detection. It'll calculate the horizontal displacement from the frame's center to use as an error signal for angular velocity and the width magnitude
   of the detected bounding box as an error signal for linear velocity. We've also implemented a PD feedback control on the angular velocity and an average smoothing technique on the linear velocity to improve transients as we had issue with overshoots and oscillations due to the large momentum of Herome.
   Once we've the controlled linear and angular velocity, we applied some basic kinematics for differential drives to translate them into PWM signals for the left and right side of the wheel.</p>
-<center><img src="Robot Pictures/IMG-5163.jpg" alt="I5163" width="500"></center>
+<center><img src="pictures/IMG-5163.jpg" alt="I5163" width="500"></center>
 <center><p> Figure 4. Motor control chips pictures for motor control subsystem. </p></center>
 <center><img src="Diagrams and Schematics/ECE4180_MotorControlPinout.png" alt="I5160" width="300"><img src="Diagrams and Schematics/ECE4180_MotorControlPinout2.png" alt="I5161" width="300"></center>
 <center><p> Figure 5. Pinout table for motor control subsystem and h-bridge. </p></center>
@@ -112,7 +112,7 @@ To get up and running with Herome from scratch, the following task will need to 
 <center><img src="Diagrams and Schematics/ECE4180_PowerSchematic.png" alt="PS" width="500"></center>
 <center><p> Figure 6. Power schematic for the robot and its power subsystem. </p></center>
 <p>The battery pack consists of six 3500mAh lithium ion batteries. Two sets of three batteries are wired in series to create one 7.4V 10.5Ah battery. The cells are protected by a battery management system that prevents over/under discharge and balances the battery voltages. Two 5V regulators drop the battery output voltage to 5V to power the Raspberry Pi, mBed, and the transformer. The two regulators combined can output a total of 6 amps. A voltage divider on the battery circuit allows the mBed (pin p19) to monitor the battery level and display the percentage on the front of the robot through the LEDs.</p>
-<center><img src="Robot Pictures/IMG-5160.jpg" alt="I5160" width="200"><img src="Robot Pictures/IMG-5161.jpg" alt="I5161" width="200"><img src="Robot Pictures/IMG-5162.jpg" alt="I5162" width="200"></center>
+<center><img src="pictures/IMG-5160.jpg" alt="I5160" width="200"><img src="pictures/IMG-5161.jpg" alt="I5161" width="200"><img src="pictures/IMG-5162.jpg" alt="I5162" width="200"></center>
 <center><p> Figure 7. Power system pictures for power management subsystem. </p></center>
 
 
@@ -121,12 +121,12 @@ To get up and running with Herome from scratch, the following task will need to 
 <p>An EMIC2 Text to Speech chip with a speaker will be used to generate audio output based on text input the user enters through the Adafruit Bluetooth app. The BLE chip will receive ASCII texts and stream them serially over a UART port to the mbed that will handle the execution logic. Text inputs will be streamed over UART to the EMIC 2 chip to generate audio while button controls will adjust volume and voice settings as well as activate the taser actuator described in the next section.</p>
 <center><img src="Diagrams and Schematics/ECE4180_AudioPinout.png" alt="AP" width="500"></center>
 <center><p> Figure 8. Pinout table for audio subsystem and EMIC2 chip. </p></center>
-<center><img src="Robot Pictures/IMG-5165.jpg" alt="I5165" width="500"></center>
+<center><img src="pictures/IMG-5165.jpg" alt="I5165" width="500"></center>
 <center><p> Figure 9. Audio chips pictures for text to speech output subsystem. </p></center>
 <h3>
 <a id="tail-taser" class="anchor" href="#tail-taser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Taser and Tail Actuator</h3>
 <p>The end of our robot will have a tail that consists of two servos and wiring for a taser. The two servos will have a tail like wagging motion that has three different states: Happy, Sad, and Nothing. The happy state will cause the tail to wag really fast with the sad state causing the tail to wag slower. The nothing state will have the tail do nothing at all and will be started when the robot does not detect a human. Additionally, there will be a taser that the user can control via our bluetooth chip. When the user presses the button 1 on the bluetooth app connected to the mbed, the taser will zap.</p>
-<center><img src="Robot Pictures/IMG-5157.jpg" alt="I5157" width="200"><img src="Robot Pictures/IMG-5158.jpg" alt="I5158" width="200"><img src="Robot Pictures/IMG-5159.jpg" alt="I5159" width="200"></center>
+<center><img src="pictures/IMG-5157.jpg" alt="I5157" width="200"><img src="pictures/IMG-5158.jpg" alt="I5158" width="200"><img src="pictures/IMG-5159.jpg" alt="I5159" width="200"></center>
 <center><p> Figure 10. Tail pictures for tail taser subsystem. </p></center>
 <h3>
 <a id="chassis-mechanics-and-custom-parts" class="anchor" href="#chassis-mechanics-and-custom-parts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mechanical Structure</h3>
