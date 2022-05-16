@@ -10,7 +10,7 @@
   </tr>
  </table>
 
-Herome is a robot that processes frames at 13 FPS to follow its owner around turns, curves, and nearby humans. Powered by 6 rechargable lithium ion cells, it has a bluetooth interface to allow its owner to text to Herome whatever the owner wants Herome to say as well as a taser that the user can activate through the BLE interface to scare off any potential bullies.
+Herome is a robot that processes frames at 13 FPS to follow its owner around turns, curves, and nearby humans at maxiumum velocity of 0.7 m/s. Powered by 6 rechargable lithium ion cells, it has a bluetooth interface to allow its owner to text to Herome whatever the owner wants Herome to say as well as a taser that the user can activate through the BLE interface to scare off any potential bullies.
 
 This was made for ECE 4180 Embedded Systems as a final class project in a group of 4 teammates over a 4 week period. Documentation and project overview are described in more details in the github pages link [here](https://github.gatech.edu/pages/nkoh8/ECE4180_FinalProject/) and a video demo is on Youtube [here](https://youtu.be/coP1mWwhwus)
 
