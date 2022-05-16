@@ -18,5 +18,7 @@ This was made for ECE 4180 Embedded Systems as a final class project in a group 
 
 **High Level System Diagram of Herome**
 
+---
+
 ![image](https://user-images.githubusercontent.com/55326650/168669741-b74ef6af-64f2-4de9-b500-d526062cb116.png)
 **Software Execution Flow**
