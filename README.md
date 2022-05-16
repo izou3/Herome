@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ECE4180_FinalProject
 ![image](https://github.gatech.edu/storage/user/36924/files/f3635698-ef15-46a8-bdad-d2ec784cee50)
 
@@ -35,3 +36,6 @@ python3 SingleThread.py
 python3 MultiThread.py
 python3 MultiProc.py
 ```
+=======
+# Herome
+>>>>>>> 5f9937e8bde9b28907a64267820a157028057ccd
