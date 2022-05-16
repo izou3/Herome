@@ -95,7 +95,7 @@ def main():
     )
 
     # Initialization
-    MAX_LIN_VEL = 0.7147 # m/s based on 5V @ 210 RPMs
+    MAX_LIN_VEL = 0.7147 # m/s based on 8V @ 210 RPMs
     MAX_ANG_VEL = 22 # rads/s 
     WHEEL_BASE = 0.135 # meters
     HALF_WHEEL_BASE = WHEEL_BASE * 0.5
